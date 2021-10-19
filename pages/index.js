@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form'
+import data from '../utils/data'
 
 export default function Home() {
     const { register, handleSubmit } = useForm()
@@ -25,118 +26,43 @@ export default function Home() {
                 />
             </form>
             <div className='overflow-auto scroll_custom'>
-                <table className='w-full'>
+                <table className='w-full text-sm'>
                     <thead>
                         <tr>
-                            <th
-                                className='
-                                    sticky left-0 bg-green-500 text-white px-[30px]
-                                '
-                            >
-                                <span>Name</span>
+                            <th className='sticky'>
+                                <div className='min-w-[200px] whitespace-pre-wrap text-left'>
+                                    TÊN
+                                </div>
                             </th>
-                            <th className='bg-green-500 text-white'>ID</th>
-                            <th className='bg-green-500 text-white'>Catelogry</th>
-                            <th className='bg-green-500 text-white'>Quantily</th>
-                            <th className='bg-green-500 text-white'>Price</th>
-                            <th className='bg-green-500 text-white'>Position</th>
-                            <th className='bg-green-500 text-white'>Note</th>
+                            <th>SL1</th>
+                            <th>SL2</th>
+                            <th>G</th>
+                            <th>VT1</th>
+                            <th>VT2</th>
+                            <th>VT3</th>
+                            <th>VT4</th>
+                            <th>NOTE</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td
-                                className='
-                                    sticky left-0 px-[30px]
-                                '
-                            >
-                                <span>Nguồn gốc nhân loại</span>
-                            </td>
-                            <td>123456</td>
-                            <td>Động vật học</td>
-                            <td>38</td>
-                            <td>70.000</td>
-                            <td>Ngoài - Dãy 1 - Thùng - Cột 2</td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td
-                                className='
-                                    sticky left-0 px-[30px]
-                                '
-                            >
-                                <span>Nguồn gốc nhân loại</span>
-                            </td>
-                            <td>123456</td>
-                            <td>Động vật học</td>
-                            <td>38</td>
-                            <td>70.000</td>
-                            <td>Ngoài - Dãy 1 - Thùng - Cột 2</td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td
-                                className='
-                                    sticky left-0 px-[30px]
-                                '
-                            >
-                                <span>Nguồn gốc nhân loại</span>
-                            </td>
-                            <td>123456</td>
-                            <td>Động vật học</td>
-                            <td>38</td>
-                            <td>70.000</td>
-                            <td>Ngoài - Dãy 1 - Thùng - Cột 2</td>
-                            <td></td>
-                        </tr>
-
-                        <tr>
-                            <td
-                                className='
-                                    sticky left-0 px-[30px]
-                                '
-                            >
-                                <span>Nguồn gốc nhân loại</span>
-                            </td>
-                            <td>123456</td>
-                            <td>Động vật học</td>
-                            <td>38</td>
-                            <td>70.000</td>
-                            <td>Ngoài - Dãy 1 - Thùng - Cột 2</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td
-                                className='
-                                    sticky left-0 px-[30px]
-                                '
-                            >
-                                <span>Nguồn gốc nhân loại</span>
-                            </td>
-                            <td>123456</td>
-                            <td>Động vật học</td>
-                            <td>38</td>
-                            <td>70.000</td>
-                            <td>Ngoài - Dãy 1 - Thùng - Cột 2</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td
-                                className='
-                                    sticky left-0 px-[30px]
-                                '
-                            >
-                                <span>Nguồn gốc nhân loại</span>
-                            </td>
-                            <td>123456</td>
-                            <td>Động vật học</td>
-                            <td>38</td>
-                            <td>70.000</td>
-                            <td>Ngoài - Dãy 1 - Thùng - Cột 2</td>
-                            <td></td>
-                        </tr>
+                        {data.map((item, idx) => {
+                            return (
+                                <tr>
+                                    <td className='sticky'>
+                                        <div className='min-w-[200px]  whitespace-pre-wrap text-left'>
+                                            {item.NAME}
+                                        </div>
+                                    </td>
+                                    <td>{item.SL1 ? item.SL1 : ''}</td>
+                                    <td>{item.SL2 ? item.SL2 : ''}</td>
+                                    <td>{item.G ? item.G : ''}</td>
+                                    <td>{item.VT1 ? item.VT1 : ''}</td>
+                                    <td>{item.VT2 ? item.VT2 : ''}</td>
+                                    <td>{item.VT3 ? item.VT3 : ''}</td>
+                                    <td>{item.VT4 ? item.VT4 : ''}</td>
+                                </tr>
+                            )
+                        })}
                     </tbody>
                 </table>
             </div>
