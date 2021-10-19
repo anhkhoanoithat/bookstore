@@ -41,6 +41,84 @@ export default function Home() {
                             <td>Ngoài - Dãy 1 - Thùng - Cột 2</td>
                             <td></td>
                         </tr>
+
+                        <tr>
+                            <td
+                                className='
+                                    sticky left-0 px-[30px]
+                                '
+                            >
+                                <span>Nguồn gốc nhân loại</span>
+                            </td>
+                            <td>123456</td>
+                            <td>Động vật học</td>
+                            <td>38</td>
+                            <td>70.000</td>
+                            <td>Ngoài - Dãy 1 - Thùng - Cột 2</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td
+                                className='
+                                    sticky left-0 px-[30px]
+                                '
+                            >
+                                <span>Nguồn gốc nhân loại</span>
+                            </td>
+                            <td>123456</td>
+                            <td>Động vật học</td>
+                            <td>38</td>
+                            <td>70.000</td>
+                            <td>Ngoài - Dãy 1 - Thùng - Cột 2</td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td
+                                className='
+                                    sticky left-0 px-[30px]
+                                '
+                            >
+                                <span>Nguồn gốc nhân loại</span>
+                            </td>
+                            <td>123456</td>
+                            <td>Động vật học</td>
+                            <td>38</td>
+                            <td>70.000</td>
+                            <td>Ngoài - Dãy 1 - Thùng - Cột 2</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td
+                                className='
+                                    sticky left-0 px-[30px]
+                                '
+                            >
+                                <span>Nguồn gốc nhân loại</span>
+                            </td>
+                            <td>123456</td>
+                            <td>Động vật học</td>
+                            <td>38</td>
+                            <td>70.000</td>
+                            <td>Ngoài - Dãy 1 - Thùng - Cột 2</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td
+                                className='
+                                    sticky left-0 px-[30px]
+                                '
+                            >
+                                <span>Nguồn gốc nhân loại</span>
+                            </td>
+                            <td>123456</td>
+                            <td>Động vật học</td>
+                            <td>38</td>
+                            <td>70.000</td>
+                            <td>Ngoài - Dãy 1 - Thùng - Cột 2</td>
+                            <td></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
