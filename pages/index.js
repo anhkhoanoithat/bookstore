@@ -1,13 +1,31 @@
+import { useForm } from 'react-hook-form'
+
 export default function Home() {
+    const { register, handleSubmit } = useForm()
+    const onSubmit = ({ text }) => {
+        console.log({ text })
+    }
     return (
         <div className='py-10 px-1'>
-            <div
+            <form
+                onSubmit={handleSubmit(onSubmit)}
                 className='
-                    relative 
-                    overflow-auto scroll_custom
+                    w-full text-center mb-8 mt-2
                 '
             >
-                <table className='w-full text-[14px]'>
+                <input
+                    {...register('text', { required: true })}
+                    type='search'
+                    className='
+                        w-[80%] max-w-[400px] p-3
+                        border-[2px] border-green-400 
+                        rounded-lg outline-none
+                    '
+                    placeholder='Enter text search... &#128540; &#128540; &#128540;'
+                />
+            </form>
+            <div className='overflow-auto scroll_custom'>
+                <table className='w-full'>
                     <thead>
                         <tr>
                             <th
@@ -15,7 +33,7 @@ export default function Home() {
                                     sticky left-0 bg-green-500 text-white px-[30px]
                                 '
                             >
-                                Name
+                                <span>Name</span>
                             </th>
                             <th className='bg-green-500 text-white'>ID</th>
                             <th className='bg-green-500 text-white'>Catelogry</th>
