@@ -1,10 +1,26 @@
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import data from '../utils/data'
+import removeAccents from '../utils/removeAccents'
+import { useRef } from 'react'
 
 export default function Home() {
     const { register, handleSubmit } = useForm()
-    const onSubmit = ({ text }) => {
-        console.log({ text })
+    const [renderData, setRenderData] = useState(data)
+    const ref = useRef()
+    const onSubmit = ({ text }) => {}
+    const onChange = (event) => {
+        const text = event.target.value
+        if (text) {
+            const result = data.filter((item) => {
+                return removeAccents(item.NAME.toLowerCase()).includes(
+                    removeAccents(text.toLowerCase())
+                )
+            })
+            setRenderData(result)
+        } else {
+            setRenderData(data)
+        }
     }
     return (
         <div className='py-10 px-1'>
@@ -15,7 +31,7 @@ export default function Home() {
                 '
             >
                 <input
-                    {...register('text', { required: true })}
+                    {...register('text')}
                     type='search'
                     className='
                         w-[80%] max-w-[400px] p-3
@@ -23,6 +39,7 @@ export default function Home() {
                         rounded-lg outline-none
                     '
                     placeholder='Enter text search... &#128540; &#128540; &#128540;'
+                    onChange={onChange}
                 />
             </form>
             <div className='overflow-auto scroll_custom'>
@@ -45,9 +62,9 @@ export default function Home() {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((item, idx) => {
+                        {renderData.map((item, idx) => {
                             return (
-                                <tr>
+                                <tr key={idx}>
                                     <td className='sticky'>
                                         <div className='min-w-[200px]  whitespace-pre-wrap text-left'>
                                             {item.NAME}
