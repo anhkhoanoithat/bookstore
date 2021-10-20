@@ -6,11 +6,6 @@ import { useRouter } from 'next/router'
 
 export default function Home() {
     const [renderData, setRenderData] = useState(data)
-    const router = useRouter()
-    const isLogin = useSelector((state) => state.user.isLogin)
-    if (!isLogin) {
-        router.push('/login')
-    }
 
     const onChange = (event) => {
         const text = event.target.value

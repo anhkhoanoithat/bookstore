@@ -2,18 +2,20 @@ import mongoose from 'mongoose'
 
 const Shema = new mongoose.Schema(
     {
-        NAME: { type: String, required },
-        SL1: { type: Number, default: 0 },
-        SL2: { type: Number, default: 0 },
-        G: { type: Number, default: 0 },
-        VT1: { type: String },
-        VT2: { type: String },
-        VT3: { type: String },
-        VT4: { type: String },
+        name: { type: String, required: true },
+        sl1: { type: Number, default: 0 },
+        sl2: { type: Number, default: 0 },
+        g: { type: Number, default: 0 },
+        vt1: { type: String },
+        vt2: { type: String },
+        vt3: { type: String },
+        vt4: { type: String },
     },
     {
         timestamps: true,
     }
 )
 
-export default mongoose.models('Books') || mongoose.model('Books', Shema)
+const model = mongoose.model('Books') || mongoose.model('Books', Shema)
+
+export default model
