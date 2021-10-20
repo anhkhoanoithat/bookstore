@@ -1,14 +1,17 @@
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { useSelector } from 'react-redux'
 import data from '../utils/data'
 import removeAccents from '../utils/removeAccents'
-import { useRef } from 'react'
+import { useRouter } from 'next/router'
 
 export default function Home() {
-    const { register, handleSubmit } = useForm()
     const [renderData, setRenderData] = useState(data)
-    const ref = useRef()
-    const onSubmit = ({ text }) => {}
+    const router = useRouter()
+    const isLogin = useSelector((state) => state.user.isLogin)
+    if (!isLogin) {
+        router.push('/login')
+    }
+
     const onChange = (event) => {
         const text = event.target.value
         if (text) {
@@ -25,13 +28,11 @@ export default function Home() {
     return (
         <div className='py-10 px-1'>
             <form
-                onSubmit={handleSubmit(onSubmit)}
                 className='
                     w-full text-center mb-8 mt-2
                 '
             >
                 <input
-                    {...register('text')}
                     type='search'
                     className='
                         w-[80%] max-w-[400px] p-3
